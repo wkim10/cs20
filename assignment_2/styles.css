@@ -1,0 +1,214 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+hr {
+  border: none;
+  height: 0.5px;
+  margin-top: 100px;
+  margin-inline: 100px;
+}
+
+input {
+  border-radius: 8px;
+}
+
+label {
+  font-size: 18px;
+}
+
+ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+textarea {
+  border-radius: 8px;
+  margin-left: 66px;
+  width: 25vw;
+}
+
+.BodyWrapper {
+  margin-top: 150px;
+  margin-inline: 100px;
+}
+
+.BannerPhoto {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+}
+
+.ContentRow {
+  display: flex;
+  justify-content: space-between;
+  margin-inline: 100px;
+  gap: 50px;
+}
+
+.ContentRowTwoPics {
+  margin-top: 50px;
+  width: 53vw;
+  align-self: center;
+}
+
+.EmailInput {
+  margin-left: 48px;
+}
+
+.FooterWrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-inline: 100px;
+  margin-block: 50px;
+}
+
+.Header {
+  display: flex;
+  justify-content: space-between;
+  margin-block: 30px;
+  padding-inline: 50px;
+  align-items: center;
+}
+
+.HeaderLink {
+  color: white;
+  text-decoration: none;
+}
+
+.HeaderLink:hover {
+  color: #ff4500;
+}
+
+.HeaderTitle {
+  color: white;
+  font-size: 30px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.HeaderWrapper {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.ImageBorder {
+  border-radius: 8px;
+  border: 1px solid white;
+}
+
+.ImageSectionWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ImageSectionWrapperMobile {
+  display: none;
+}
+
+.MainSectionContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  color: white;
+}
+
+.MessageInput {
+  margin-left: 66px;
+  width: 50vw;
+}
+
+.NameInput {
+  margin-left: 44px;
+}
+
+.NumberInput {
+  margin-left: 10px;
+}
+
+.SectionTitle {
+  font-weight: 600;
+  font-size: 40px;
+  margin-bottom: 50px;
+}
+
+.ServicesContentTitle {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.ServicesContentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+@media (max-width: 800px) {
+  hr {
+    margin-inline: 50px;
+  }
+
+  .BodyWrapper {
+    margin-inline: 50px;
+  }
+
+  .ContentRow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-inline: 50px;
+    /* justify-content: space-between; */
+    /* margin-inline: 100px; */
+    /* gap: 50px; */
+  }
+
+  .ContentRowTwoPics {
+    margin-top: 50px;
+    width: auto;
+    align-self: center;
+  }
+
+  .FooterWrapper {
+    margin-inline: 50px;
+  }
+
+  .ImageSectionWrapper {
+    display: none;
+  }
+
+  .ImageSectionWrapperMobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 404px) {
+  .NameInput {
+    margin-left: 0px;
+  }
+
+  .EmailInput {
+    margin-left: 0px;
+  }
+
+  .NumberInput {
+    margin-left: 0px;
+  }
+
+  .MessageInput {
+    margin-left: 5px;
+    width: 50vw;
+  }
+}
