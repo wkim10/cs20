@@ -1,0 +1,54 @@
+products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+product {
+  width: calc(33.33% - 70px);
+  font-family: Avenir;
+  display: block;
+  margin: 20px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+name,
+description,
+sizes,
+price,
+categories {
+  display: block;
+}
+
+name {
+  font-weight: bold;
+}
+
+description {
+  font-style: italic;
+}
+
+description::before {
+  content: "Description: ";
+  font-style: normal;
+  font-weight: bold;
+}
+
+sizes::before {
+  content: "Size: ";
+  font-weight: bold;
+}
+
+price::before {
+  content: "Price: ";
+  color: #009900;
+}
+
+categories::before {
+  content: "Categories: ";
+  font-size: 80%;
+  color: #777;
+}

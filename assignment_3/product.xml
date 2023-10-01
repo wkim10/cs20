@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href = "styles.css" ?>
+
+<products>
+    <product>
+        <name>Classic Ahi Poke Bowl</name>
+        <description>Fresh ahi tuna, soy sauce, sesame oil, green onions, and seaweed salad.</description>
+        <sizes>
+            <size>Regular, </size>
+            <size>Large</size>
+        </sizes>
+        <price>$12.99</price>
+        <categories>
+            <category>Seafood, </category>
+            <category>Healthy</category>
+        </categories>
+    </product>
+    <product>
+        <name>Spicy Salmon Poke Bowl</name>
+        <description>Spicy marinated salmon, cucumber, edamame, and avocado.</description>
+        <sizes>
+            <size>Regular, </size>
+            <size>Large</size>
+        </sizes>
+        <price>$11.99</price>
+        <categories>
+            <category>Seafood, </category>
+            <category>Spicy, </category>
+            <category>Healthy</category>
+        </categories>
+    </product>
+    <product>
+        <name>Vegetarian Poke Bowl</name>
+        <description>Marinated tofu, mixed vegetables, and sesame ginger dressing.</description>
+        <sizes>
+            <size>Regular</size>
+        </sizes>
+        <price>$9.99</price>
+        <categories>
+            <category>Vegan, </category>
+            <category>Healthy</category>
+        </categories>
+    </product>
+    <product>
+        <name>Salmon and Avocado Poke Bowl</name>
+        <description>Fresh salmon, ripe avocado, cucumber, and ponzu sauce.</description>
+        <sizes>
+            <size>Regular, </size>
+            <size>Large</size>
+        </sizes>
+        <price>$14.99</price>
+        <categories>
+            <category>Seafood, </category>
+            <category>Avocado, </category>
+            <category>Healthy</category>
+        </categories>
+    </product>
+      <product>
+        <name>Tuna Lover's Poke Bowl</name>
+        <description>Generous portions of ahi tuna, spicy mayo, and sushi rice.</description>
+        <sizes>
+            <size>Regular</size>
+        </sizes>
+        <price>$13.99</price>
+        <categories>
+            <category>Seafood, </category>
+            <category>Spicy</category>
+        </categories>
+    </product>
+    <product>
+        <name>Veggie Delight Poke Bowl</name>
+        <description>Assorted fresh vegetables, tofu, and teriyaki sauce.</description>
+        <sizes>
+            <size>Regular, </size>
+            <size>Large</size>
+        </sizes>
+        <price>$10.99</price>
+        <categories>
+            <category>Vegan, </category>
+            <category>Healthy</category>
+        </categories>
+    </product>
+    <product>
+        <name>California Roll Poke Bowl</name>
+        <description>Imitation crab, avocado, cucumber, and sushi rice with soy sauce.</description>
+        <sizes>
+            <size>Regular</size>
+        </sizes>
+        <price>$11.99</price>
+        <categories>
+            <category>Seafood, </category>
+            <category>Avocado</category>
+        </categories>
+    </product>
+    <product>
+        <name>Spicy Tuna Poke Bowl</name>
+        <description>Spicy marinated ahi tuna, avocado, cucumber, and sriracha sauce.</description>
+        <sizes>
+            <size>Regular, </size>
+            <size>Large</size>
+        </sizes>
+        <price>$13.49</price>
+        <categories>
+            <category>Seafood, </category>
+            <category>Spicy</category>
+        </categories>
+    </product>
+    <product>
+        <name>Teriyaki Chicken Poke Bowl</name>
+        <description>Grilled teriyaki chicken, pineapple chunks, and mixed greens.</description>
+        <sizes>
+            <size>Regular, </size>
+            <size>Large</size>
+        </sizes>
+        <price>$11.99</price>
+        <categories>
+            <category>Chicken, </category>
+            <category>Teriyaki, </category>
+            <category>Healthy</category>
+        </categories>
+    </product>
+</products>
