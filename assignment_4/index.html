@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joe's Hotdog Stand</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f7f7f7;
+        color: #333;
+      }
+      header {
+        background-color: #ff5733;
+        padding: 20px;
+        text-align: center;
+        color: white;
+      }
+      h1 {
+        font-size: 24px;
+      }
+      .container {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      h2 {
+        color: #ff5733;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to Joe's Hotdog Stand!</h1>
+    </header>
+
+    <div class="container">
+      <script>
+        function formatCurrencyValue(value) {
+          const roundedValue = Math.round(value * 100) / 100;
+
+          const valueString = roundedValue.toString();
+
+          const [integerString, decimalString] = valueString.split(".");
+
+          if (decimalString && decimalString.length == 1) {
+            return "$" + integerString + "." + decimalString + "0";
+          } else if (!decimalString) {
+            return "$" + integerString + "." + "00";
+          } else {
+            return "$" + integerString + "." + decimalString;
+          }
+        }
+
+        const HOTDOG_PRICE = 3.75;
+        const FRENCH_FRY_PRICE = 3.0;
+        const SODA_PRICE = 2.5;
+        const TAX = 0.0625;
+
+        const numHotdogs = prompt("How many hotdogs do you want?");
+        const numFries = prompt("How many fries do you want?");
+        const numSodas = prompt("How many sodas do you want?");
+
+        const totalHotdogPrice = numHotdogs * HOTDOG_PRICE;
+        const totalFryPrice = numFries * FRENCH_FRY_PRICE;
+        const totalSodaPrice = numSodas * SODA_PRICE;
+
+        const subtotalBeforeDiscount =
+          totalHotdogPrice + totalFryPrice + totalSodaPrice;
+
+        let subtotalAfterDiscount = subtotalBeforeDiscount;
+        let discount = 0;
+
+        if (subtotalBeforeDiscount >= 25) {
+          discount = subtotalBeforeDiscount * 0.1;
+          subtotalAfterDiscount -= discount;
+        }
+
+        const taxAmount = subtotalAfterDiscount * TAX;
+
+        const finalSubtotal = subtotalAfterDiscount + taxAmount;
+
+        document.write("<div>");
+        document.write("<h2>Order Summary</h2>");
+        document.write("Number of Hotdogs Ordered: " + numHotdogs + "<br>");
+        document.write(
+          "Total Price of Hotdogs Ordered: " +
+            formatCurrencyValue(totalHotdogPrice) +
+            "<br><br>"
+        );
+        document.write("Number of French Fries Ordered: " + numFries + "<br>");
+        document.write(
+          "Total Price of French Fries Ordered: " +
+            formatCurrencyValue(totalFryPrice) +
+            "<br><br>"
+        );
+        document.write("Number of Sodas Ordered: " + numSodas + "<br>");
+        document.write(
+          "Total Price of Sodas Ordered: " +
+            formatCurrencyValue(totalSodaPrice) +
+            "<br><br>"
+        );
+        document.write(
+          "Subtotal Before Discount: " +
+            formatCurrencyValue(subtotalBeforeDiscount) +
+            "<br>"
+        );
+        subtotalBeforeDiscount >= 25 &&
+          document.write("Discount: " + formatCurrencyValue(discount) + "<br>");
+        document.write(
+          "Subtotal After Discount: " +
+            formatCurrencyValue(subtotalAfterDiscount) +
+            "<br><br>"
+        );
+        document.write(
+          "Tax Amount: " + formatCurrencyValue(taxAmount) + "<br><br>"
+        );
+        document.write(
+          "Final Total: " + formatCurrencyValue(finalSubtotal) + "<br>"
+        );
+      </script>
+    </div>
+  </body>
+</html>
