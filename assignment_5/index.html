@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Tic Tac Toe</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>Tic Tac Toe</h1>
+      <div id="grid"></div>
+      <p id="message"></p>
+      <button id="reset">New Game</button>
+    </div>
+
+    <script>
+      const grid = document.getElementById("grid");
+      const message = document.getElementById("message");
+      const reset = document.getElementById("reset");
+
+      let currentPlayer = "X";
+      let moves = 0;
+      let gameBoard = ["", "", "", "", "", "", "", "", ""];
+      let gameOver = false;
+
+      function createCell() {
+        const cell = document.createElement("div");
+        cell.id = "cell";
+        cell.addEventListener("click", handleCellClick);
+        return cell;
+      }
+
+      function renderBoard() {
+        grid.innerHTML = "";
+        for (let i = 0; i < 9; i++) {
+          const cell = createCell();
+          cell.setAttribute("cell-index", i);
+          cell.textContent = gameBoard[i];
+          grid.appendChild(cell);
+        }
+        message.textContent = "Player " + currentPlayer + "'s turn";
+      }
+
+      function handleCellClick(event) {
+        const clickedCell = event.target;
+        const cellIndex = clickedCell.getAttribute("cell-index");
+
+        if (gameBoard[cellIndex] === "" && !gameOver) {
+          gameBoard[cellIndex] = currentPlayer;
+          clickedCell.textContent = currentPlayer;
+          moves++;
+
+          if (checkFinished()) {
+            gameOver = true;
+            message.textContent = currentPlayer + " wins!";
+          } else if (moves === 9) {
+            gameOver = true;
+            message.textContent = "Stalemate!";
+          } else {
+            currentPlayer = currentPlayer === "X" ? "O" : "X";
+            message.textContent = "Player " + currentPlayer + "'s turn";
+          }
+        }
+      }
+
+      function checkFinished() {
+        const winConditions = [
+          [0, 1, 2],
+          [3, 4, 5],
+          [6, 7, 8],
+          [0, 3, 6],
+          [1, 4, 7],
+          [2, 5, 8],
+          [0, 4, 8],
+          [2, 4, 6],
+        ];
+
+        for (const condition of winConditions) {
+          const [a, b, c] = condition;
+          if (
+            gameBoard[a] !== "" &&
+            gameBoard[a] === gameBoard[b] &&
+            gameBoard[a] === gameBoard[c]
+          ) {
+            return true;
+          }
+        }
+        return false;
+      }
+
+      reset.addEventListener("click", () => {
+        currentPlayer = "X";
+        moves = 0;
+        gameBoard = ["", "", "", "", "", "", "", "", ""];
+        gameOver = false;
+        message.textContent = "Player " + currentPlayer + "'s turn";
+        renderBoard();
+      });
+
+      renderBoard();
+    </script>
+  </body>
+</html>
