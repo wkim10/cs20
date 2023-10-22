@@ -107,7 +107,7 @@
       },
       "price": "$10.99",
       "categories": {
-        "category": ["Seafood", "Poke Bowl", "Delicious"]
+        "category": ["Seafood"]
       }
     },
     {
@@ -118,7 +118,7 @@
       },
       "price": "$9.99",
       "categories": {
-        "category": ["Vegan", "Poke Bowl", "Healthy"]
+        "category": ["Vegan", "Healthy"]
       }
     },
     {
@@ -129,7 +129,7 @@
       },
       "price": "$14.99",
       "categories": {
-        "category": ["Seafood", "Poke Bowl", "Tropical"]
+        "category": ["Seafood", "Tropical"]
       }
     }
   ]
