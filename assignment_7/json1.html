@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON 1</title>
+  </head>
+  <body>
+    <script>
+      var products = [
+        {
+          name: "Classic Ahi Poke Bowl",
+          description:
+            "Fresh ahi tuna, soy sauce, sesame oil, green onions, and seaweed salad.",
+          sizes: {
+            size: ["Regular", "Large"],
+          },
+          price: "$12.99",
+          categories: {
+            category: ["Seafood", "Healthy"],
+          },
+        },
+        {
+          name: "Spicy Salmon Poke Bowl",
+          description:
+            "Spicy marinated salmon, cucumber, edamame, and avocado.",
+          sizes: {
+            size: ["Regular", "Large"],
+          },
+          price: "$11.99",
+          categories: {
+            category: ["Seafood", "Spicy", "Healthy"],
+          },
+        },
+        {
+          name: "Vegetarian Poke Bowl",
+          description:
+            "Marinated tofu, mixed vegetables, and sesame ginger dressing.",
+          sizes: {
+            size: "Regular",
+          },
+          price: "$9.99",
+          categories: {
+            category: ["Vegan", "Healthy"],
+          },
+        },
+        {
+          name: "Salmon and Avocado Poke Bowl",
+          description: "Fresh salmon, ripe avocado, cucumber, and ponzu sauce.",
+          sizes: {
+            size: ["Regular", "Large"],
+          },
+          price: "$14.99",
+          categories: {
+            category: ["Seafood", "Avocado", "Healthy"],
+          },
+        },
+        {
+          name: "Tuna Lover's Poke Bowl",
+          description:
+            "Generous portions of ahi tuna, spicy mayo, and sushi rice.",
+          sizes: {
+            size: "Regular",
+          },
+          price: "$13.99",
+          categories: {
+            category: ["Seafood", "Spicy"],
+          },
+        },
+        {
+          name: "Veggie Delight Poke Bowl",
+          description: "Assorted fresh vegetables, tofu, and teriyaki sauce.",
+          sizes: {
+            size: ["Regular", "Large"],
+          },
+          price: "$10.99",
+          categories: {
+            category: ["Vegan", "Healthy"],
+          },
+        },
+        {
+          name: "California Roll Poke Bowl",
+          description:
+            "Imitation crab, avocado, cucumber, and sushi rice with soy sauce.",
+          sizes: {
+            size: "Regular",
+          },
+          price: "$11.99",
+          categories: {
+            category: ["Seafood", "Avocado"],
+          },
+        },
+        {
+          name: "Spicy Tuna Poke Bowl",
+          description:
+            "Spicy marinated ahi tuna, avocado, cucumber, and sriracha sauce.",
+          sizes: {
+            size: ["Regular", "Large"],
+          },
+          price: "$13.49",
+          categories: {
+            category: ["Seafood", "Spicy"],
+          },
+        },
+        {
+          name: "Teriyaki Chicken Poke Bowl",
+          description:
+            "Grilled teriyaki chicken, pineapple chunks, and mixed greens.",
+          sizes: {
+            size: ["Regular", "Large"],
+          },
+          price: "$11.99",
+          categories: {
+            category: ["Chicken", "Teriyaki", "Healthy"],
+          },
+        },
+        {
+          name: "Shrimp Tempura Poke Bowl",
+          description:
+            "Crispy shrimp tempura, avocado, cucumber, and eel sauce.",
+          sizes: {
+            size: "Regular",
+          },
+          price: "$10.99",
+          categories: {
+            category: ["Seafood", "Delicious"],
+          },
+        },
+        {
+          name: "Spicy Tofu Poke Bowl",
+          description:
+            "Spicy marinated tofu, mixed vegetables, and sesame ginger dressing.",
+          sizes: {
+            size: "Regular",
+          },
+          price: "$9.99",
+          categories: {
+            category: ["Vegan", "Healthy"],
+          },
+        },
+        {
+          name: "Hawaiian Pineapple Poke Bowl",
+          description:
+            "Fresh ahi tuna, pineapple chunks, cucumber, and tropical sauce.",
+          sizes: {
+            size: "Regular",
+          },
+          price: "$14.99",
+          categories: {
+            category: ["Seafood", "Tropical"],
+          },
+        },
+      ];
+
+      var jsonDataString = JSON.stringify(products);
+      document.write("<div>" + jsonDataString + "</div>");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <style>
+      html * {
+        font-family: Avenir;
+      }
+
+      pre {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+      }
+
+      /* Class CSS */
+      .JsonData {
+        background-color: #f5f5f5;
+        padding: 20px;
+        border-radius: 5px;
+        margin: 20px;
+      }
+
+      .Product {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 10px 0;
+      }
+
+      .Product h2 {
+        margin: 0;
+      }
+
+      .Product p {
+        margin: 5px 0;
+      }
+    </style>
+    <title>JSON 2</title>
+  </head>
+  <body>
+    <script>
+      $(document).ready(function () {
+        $.get(
+          "https://wkim10.github.io/cs20/assignment_7/products.json",
+          function (data) {
+            var products = data.products;
+            var jsonDataContainer = $(".JsonData");
+
+            products.forEach(function (product) {
+              var $product = $("<div>").addClass("Product");
+              $product.append($("<h2>").text(product.name));
+              $product.append($("<p>").text(product.description));
+
+              if (Array.isArray(product.sizes.size)) {
+                $product.append(
+                  $("<p>").text("Size: " + product.sizes.size.join(", "))
+                );
+              } else {
+                $product.append($("<p>").text("Size: " + product.sizes.size));
+              }
+
+              $product.append($("<p>").text("Price: " + product.price));
+
+              if (Array.isArray(product.categories.category)) {
+                $product.append(
+                  $("<p>").text(
+                    "Categories: " + product.categories.category.join(", ")
+                  )
+                );
+              } else {
+                $product.append(
+                  $("<p>").text("Categories: " + product.categories.category)
+                );
+              }
+
+              jsonDataContainer.append($product);
+            });
+          }
+        );
+      });
+    </script>
+    <h1>Poke Bowls</h1>
+    <div class="JsonData"></div>
+  </body>
+</html>

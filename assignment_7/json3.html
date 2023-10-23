@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <title>JSON 3</title>
+  </head>
+  <body>
+    <h1>Filter Poke Bowls</h1>
+
+    <div class="FilterWrapper">
+      <form class="FilterForm">
+        <label for="FilterCategory">Select a Category:</label>
+        <select class="FilterCategory"></select>
+        <button type="submit" class="FilterButton">Filter</button>
+      </form>
+    </div>
+    <div class="FilteredProducts"></div>
+
+    <script>
+      $(document).ready(function () {
+        var jsonData;
+
+        $.get(
+          "https://wkim10.github.io/cs20/assignment_7/products.json",
+          function (data) {
+            jsonData = data;
+
+            var categories = getUniqueCategories(jsonData.products);
+            var filterCategory = $(".FilterCategory");
+
+            $.each(categories, function (index, category) {
+              filterCategory.append($("<option>").val(category).text(category));
+            });
+          }
+        );
+
+        $(".FilterForm").submit(function (event) {
+          event.preventDefault();
+
+          var selectedCategory = $(".FilterCategory").val();
+
+          var filteredProducts = filterProducts(
+            jsonData.products,
+            selectedCategory
+          );
+
+          var filteredProductsDiv = $(".FilteredProducts");
+          filteredProductsDiv.empty();
+          $.each(filteredProducts, function (index, product) {
+            filteredProductsDiv.append("<p>" + product.name + "</p>");
+          });
+        });
+
+        function getUniqueCategories(products) {
+          var uniqueCategories = [];
+          $.each(products, function (index, product) {
+            $.each(product.categories.category, function (i, category) {
+              if (uniqueCategories.indexOf(category) === -1) {
+                uniqueCategories.push(category);
+              }
+            });
+          });
+
+          return uniqueCategories;
+        }
+
+        function filterProducts(products, category) {
+          return products.filter(function (product) {
+            return product.categories.category.includes(category);
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

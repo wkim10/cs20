@@ -1,0 +1,56 @@
+/* Tag CSS */
+body {
+  font-family: Avenir;
+  background-color: #f7f7f7;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+}
+
+/* Class CSS */
+.FilterWrapper {
+  text-align: center;
+  margin: 20px;
+}
+
+.FilterCategory {
+  padding: 5px;
+  font-size: 16px;
+}
+
+.FilterButton {
+  padding: 5px 15px;
+  background-color: #333;
+  border-radius: 10px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.FilterButton:hover {
+  background-color: #555;
+}
+
+.FilteredProducts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 20px;
+}
+
+.FilteredProducts p {
+  font-size: 18px;
+  margin: 5px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
