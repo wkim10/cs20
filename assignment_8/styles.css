@@ -1,0 +1,32 @@
+html * {
+  font-family: Avenir;
+}
+
+h1 {
+  text-align: center;
+}
+
+hr {
+  border: 1px solid black;
+}
+
+p {
+  padding-inline: 50px;
+}
+
+#movie-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#movie-details-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 50px;
+}
+
+#assignment-details {
+  padding-inline: 50px;
+}

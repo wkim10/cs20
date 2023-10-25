@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Star Wars Movies</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <h1>Star Wars Movies</h1>
+    <div id="movie-details"></div>
+    <div id="assignment-details">
+      <h2>ASSIGNMENT DETAILS</h2>
+      <p>
+        Description: The API I selected is called OMDB, or the open movie
+        database API. It returns information about certain movies or a group of
+        movies such as their runtime, cast, genre, and so on.
+      </p>
+      <p>Citation Link: https://www.omdbapi.com/</p>
+      <p>
+        I found this API by searching online for a free movie database API, as I
+        wanted to do something movie-related.
+      </p>
+      <p>
+        I did two API requests. The first was to get a list of JSON objects
+        representing movies, which I queried by asking for a search on movies
+        with the title of "Star Wars" to get the corresponding movies from the
+        franchise. I then did a query for each of the movies to get more
+        detailed information on each of them (such as a longer plot
+        description).
+      </p>
+      <p>
+        This API would be helpful if a user wanted to create a website that
+        recommended movies. Instead of having to create all the movie
+        information by yourself, as there is already a pre-made database ready
+        for you to use, you can save yourself a lot of time. Another way this
+        would be useful is for creating websites or apps showing information
+        about movies such as IMDb, for a similar reason as the first example.
+      </p>
+    </div>
+    <script>
+      const apiUrl = "http://www.omdbapi.com/?s=star+wars&apikey=a939e9";
+
+      const movieDetailsContainer = document.getElementById("movie-details");
+
+      fetch(apiUrl)
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.Response === "True") {
+            const movies = data.Search;
+
+            movies
+              .sort(
+                (movie1, movie2) =>
+                  parseInt(movie1.Year) - parseInt(movie2.Year)
+              )
+              .forEach((movie) => {
+                const convertedTitle = movie.Title.split(" ").join("+");
+                const movieUrl = `http://www.omdbapi.com/?t=${convertedTitle}&plot=full&apikey=a939e9`;
+
+                const movieDetailsBodyContainer = document.createElement("div");
+                movieDetailsBodyContainer.setAttribute(
+                  "id",
+                  "movie-details-body"
+                );
+                const movieDetailsTextContainer = document.createElement("div");
+                movieDetailsTextContainer.setAttribute(
+                  "id",
+                  "movie-details-text"
+                );
+
+                const titleElement = document.createElement("h2");
+                const ratedElement = document.createElement("p");
+                const runtimeElement = document.createElement("p");
+                const genreElement = document.createElement("p");
+                const directorElement = document.createElement("p");
+                const actorsElement = document.createElement("p");
+                const plotElement = document.createElement("p");
+                const awardsElement = document.createElement("p");
+                const posterElement = document.createElement("img");
+
+                fetch(movieUrl)
+                  .then((response) => response.json())
+                  .then((movieData) => {
+                    if (movieData.Response === "True") {
+                      titleElement.innerHTML = `${movieData.Title} (${movieData.Year})`;
+
+                      ratedElement.innerHTML = `Rated: ${movieData.Rated}`;
+
+                      runtimeElement.innerHTML = `Runtime: ${movieData.Runtime}`;
+
+                      genreElement.innerHTML = `Genre: ${movieData.Genre}`;
+
+                      directorElement.innerHTML = `Director: ${movieData.Director}`;
+
+                      actorsElement.innerHTML = `Actors: ${movieData.Actors}`;
+
+                      plotElement.innerHTML = `Plot: ${movieData.Plot}`;
+
+                      awardsElement.innerHTML = `Awards: ${movieData.Awards}`;
+
+                      posterElement.src = movie.Poster;
+                    }
+                  })
+                  .catch((movieError) => {
+                    console.log("Error fetching movie data", movieError);
+                  });
+
+                movieDetailsTextContainer.appendChild(titleElement);
+                movieDetailsTextContainer.appendChild(ratedElement);
+                movieDetailsTextContainer.appendChild(runtimeElement);
+                movieDetailsTextContainer.appendChild(genreElement);
+                movieDetailsTextContainer.appendChild(directorElement);
+                movieDetailsTextContainer.appendChild(actorsElement);
+                movieDetailsTextContainer.appendChild(plotElement);
+                movieDetailsTextContainer.appendChild(awardsElement);
+                movieDetailsBodyContainer.appendChild(
+                  movieDetailsTextContainer
+                );
+                movieDetailsBodyContainer.appendChild(posterElement);
+                movieDetailsContainer.appendChild(movieDetailsBodyContainer);
+              });
+          } else {
+            movieDetailsContainer.innerHTML =
+              "Movie not found or an error occurred.";
+          }
+        })
+        .catch((error) => {
+          console.log("Error fetching data", error);
+        });
+    </script>
+  </body>
+</html>
