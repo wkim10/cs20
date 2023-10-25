@@ -39,7 +39,7 @@
       </p>
     </div>
     <script>
-      const apiUrl = "http://www.omdbapi.com/?s=star+wars&apikey=a939e9";
+      const apiUrl = "https://www.omdbapi.com/?s=star+wars&apikey=a939e9";
 
       const movieDetailsContainer = document.getElementById("movie-details");
 
@@ -56,7 +56,7 @@
               )
               .forEach((movie) => {
                 const convertedTitle = movie.Title.split(" ").join("+");
-                const movieUrl = `http://www.omdbapi.com/?t=${convertedTitle}&plot=full&apikey=a939e9`;
+                const movieUrl = `https://www.omdbapi.com/?t=${convertedTitle}&plot=full&apikey=a939e9`;
 
                 const movieDetailsBodyContainer = document.createElement("div");
                 movieDetailsBodyContainer.setAttribute(
